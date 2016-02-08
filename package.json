@@ -1,0 +1,16 @@
+{
+  "name": "godev-sprint6-workshop3",
+  "version": "1.0.0",
+  "description": "Workshop code",
+  "author": "Dragos Badea <bedeabza@gmail.com>",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "license": "MIT",
+  "dependencies": {
+    "angular-ui-bootstrap": "^1.1.2",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4"
+  }
+}

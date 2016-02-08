@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="workshop3">
 <head>
     <title>Budget App</title>
 
@@ -12,63 +12,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container container-main">
-        <div class="page-header">
-            <h1>2,174.50 <small>RON</small></h1>
-        </div>
-        <div class="align-center">
-            <div class="btn-group" role="group">
-                <a href="" class="btn btn-primary">Balance</a>
-                <a href="" class="btn btn-default">Income</a>
-                <a href="" class="btn btn-default">Spendings</a>
-            </div>
-        </div>
-        <div class="table-container">
-            <table class="table table-hover">
-                <tbody>
-                    <tr class="red">
-                        <td>4th @13:31</td>
-                        <td>Pizza</td>
-                        <td>-20.00</td>
-                        <td width="40"><button type="button" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button></td>
-                    </tr>
-                    <tr class="red">
-                        <td>2nd @21:18</td>
-                        <td>Iesire in oras</td>
-                        <td>-40.00</td>
-                        <td width="40"><button type="button" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button></td>
-                    </tr>
-                    <tr class="red">
-                        <td>1st @14:34</td>
-                        <td>Cumparaturi</td>
-                        <td>-132.54</td>
-                        <td width="40"><button type="button" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button></td>
-                    </tr>
-                    <tr class="green">
-                        <td>1st @10:00</td>
-                        <td>Salariu</td>
-                        <td>+2,500.00</td>
-                        <td width="40"><button type="button" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="buttons">
-            <a href="add.html" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> Receive</a>
-            <a href="add.html" class="btn btn-default right">Spend <i class="glyphicon glyphicon-minus"></i></a>
-        </div>
-        <nav>
-            <ul class="pagination">
-                <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-                <li class="active"><a href="#">Feb 2016</a></li>
-                <li><a href="#">Jan 2016</a></li>
-                <li><a href="#">Dec 2015</a></li>
-                <li><a href="#">Nov 2015</a></li>
-                <li><a href="#">Oct 2015</a></li>
-                <li><a href="#">Sep 2015</a></li>
-                <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
-            </ul>
-        </nav>
-    </div>
+    <ng-view></ng-view>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

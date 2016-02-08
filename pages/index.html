@@ -1,0 +1,40 @@
+<div class="container container-main" ng-controller="IndexCtrl">
+    <div class="page-header" ng-controller="BalanceCtrl">
+        <h1>{{ balance() | currency:'' }} <small>RON</small></h1>
+    </div>
+    <div class="align-center">
+        <div class="btn-group" role="group">
+            <a href="" class="btn btn-default" ng-class="{'btn-primary': state == 'both'}" ng-click="setState('both')">Balance</a>
+            <a href="" class="btn btn-default" ng-class="{'btn-primary': state == 'income'}" ng-click="setState('income')">Income</a>
+            <a href="" class="btn btn-default" ng-class="{'btn-primary': state == 'spendings'}" ng-click="setState('spendings')">Spendings</a>
+        </div>
+    </div>
+    <div class="table-container">
+        <table class="table table-hover">
+            <tbody ng-if="list">
+                <tr ng-repeat="item in list | stateFilter:state" ng-class="getRowClass(item)">
+                    <td>{{ getMonthFormatted(item.date) }}</td>
+                    <td>{{ item.description }}</td>
+                    <td>{{ formatAmount(item.amount) }}</td>
+                    <td width="40"><button ng-click="delete(item)" type="button" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button></td>
+                </tr>
+            </tbody>
+            <tbody ng-if="!list.length">
+                <tr>
+                    <td colspan="4">No transactions this month!</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="buttons">
+        <a href="/receive" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i> Receive</a>
+        <a href="/spend" class="btn btn-default right">Spend <i class="glyphicon glyphicon-minus"></i></a>
+    </div>
+    <nav ng-controller="PaginationCtrl">
+        <ul class="pagination">
+            <li ng-class="{'disabled': !canPrev()}"><a href="#" aria-label="Previous" ng-click="prev()"><span aria-hidden="true">&laquo;</span></a></li>
+            <li ng-repeat="item in list" ng-class="{'active': current.format('YY-MM') === item.format('YY-MM')}"><a href="" ng-click="setCurrentItem(item)">{{ item.format('MMM YYYY') }}</a></li>
+            <li><a href="#" aria-label="Next" ng-click="next()"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </nav>
+</div>
